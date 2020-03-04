@@ -11,7 +11,16 @@
 </head>
 <body>
     <div id="app">
-        <div class="container text-center mt-5">
+        <div class="container mt-5">
+            <input v-model="maxNumber" class="form-control" type="text" placeholder="Numero massimo?">
+            <input v-model="minNumber" class="form-control" type="text" placeholder="Numero minimo?">
+            <input v-model="quantity" class="form-control" type="text" placeholder="Quanti numeri in totale?">
+            <a href="#" @click="getNUmbers(maxNumber, minNumber, quantity)" class="btn btn-success">Vai</a>
+        </div>
+        <ul v-for="(number, index) in numbers">
+            <li> {{ number }}</li>
+        </ul>
+        <!-- <div class="container text-center mt-5">
             <div class="row">
                 <div class="col-sm-6">
                     <h1 v-if="isVisible" :class="isDark ? null : 'text-success'">{{ message }}</h1>
@@ -53,7 +62,7 @@
                     </table>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
     <script src="main.js"></script>
 </body>
