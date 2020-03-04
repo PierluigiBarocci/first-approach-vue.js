@@ -11,17 +11,8 @@
 </head>
 <body>
     <div id="app">
-        <div class="container mt-5">
-            <input v-model="maxNumber" class="form-control" type="text" placeholder="Numero massimo?">
-            <input v-model="minNumber" class="form-control" type="text" placeholder="Numero minimo?">
-            <input v-model="quantity" class="form-control" type="text" placeholder="Quanti numeri in totale?">
-            <a href="#" @click="getNUmbers(maxNumber, minNumber, quantity)" class="btn btn-success">Vai</a>
-        </div>
-        <ul v-for="(number, index) in numbers">
-            <li> {{ number }}</li>
-        </ul>
-        <!-- <div class="container text-center mt-5">
-            <div class="row">
+        <div class="container text-center">
+            <div class="row my-5">
                 <div class="col-sm-6">
                     <h1 v-if="isVisible" :class="isDark ? null : 'text-success'">{{ message }}</h1>
                 </div>
@@ -30,15 +21,15 @@
                     <a href="#" @click="toggleColor" class="btn btn-success mt-2">{{ button_color }}</a>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-12 mt-5">
+            <div class="row my-5">
+                <div class="col-sm-12">
                     <h3 v-bind:title="hover_message" class="text-primary">
                         Fermati qui sopra con il mouse!
                     </h3>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-12 my-5">
+            <div class="row my-5">
+                <div class="col-sm-12 mb-5">
                     <h3>Lista Della Spesa</h3>
                 </div>
                 <div class="col-sm-6 text-left">
@@ -62,7 +53,35 @@
                     </table>
                 </div>
             </div>
-        </div> -->
+            <div class="row my-5">
+                <div class="col-sm-12 mb-5">
+                    <h3>Generatore Numeri Random</h3>
+                </div>
+                <div class="col-sm-6">
+                    <form>
+                        <div class="form-group">
+                            <label>Qual è il numero Massimo</label>
+                            <input v-model="maxNumber" class="form-control" type="text" placeholder="Numero massimo">
+                        </div>
+                        <div class="form-group">
+                            <label>Qual è il numero Minimo</label>
+                            <input v-model="minNumber" class="form-control" type="text" placeholder="Numero minimo">
+                        </div>
+                        <div class="form-group">
+                            <label>Quanti numeri vorresti?</label>
+                            <input v-model="quantity" class="form-control" type="text" placeholder="Quanti numeri in totale?">
+                        </div>
+                        <a href="#" @click="getNUmbers(maxNumber, minNumber, quantity)" class="btn btn-success">Vai</a>
+                    </form>
+                </div>
+                <div v-if="numbers.length != 0" class="col-sm-6">
+                    <h3>Ecco i numeri usciti: </h3>
+                    <ul class="list-group" v-for="(number, index) in numbers">
+                        <li class="list-group-item"> {{ number }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="main.js"></script>
 </body>
