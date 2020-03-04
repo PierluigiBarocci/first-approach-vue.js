@@ -6,7 +6,19 @@ var app = new Vue({
         button_color: 'Cambia Colore',
         isVisible: true,
         isDark: true,
-        hover_message: 'Vue.js è magnifico!'
+        hover_message: 'Vue.js è magnifico!',
+        items : [
+            {
+                text: 'Mele'
+            },
+            {
+                text: 'Carote'
+            },
+            {
+                text: 'Carne'
+            },
+        ],
+        newItem : '',
     },
     methods: {
         toggleTitle() {
@@ -20,6 +32,12 @@ var app = new Vue({
         },
         toggleColor() {
             this.isDark = !this.isDark;
+        },
+        addItem() {
+            this.items.push({
+                text: this.newItem
+            });
+            this.newItem = '';
         }
     }
 })

@@ -28,6 +28,31 @@
                     </h3>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-sm-12 my-5">
+                    <h3>Lista Della Spesa</h3>
+                </div>
+                <div class="col-sm-6 text-left">
+                    <input v-model="newItem" @keypress.13="addItem" class="form-control" type="text" placeholder="Cosa devi comprare?">
+                    <a href="#" @click="addItem" class="btn btn-success mt-2">Aggiungi</a>
+                </div>
+                <div class="col-sm-6">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nome</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="(item, index) in items">
+                                <th scope="row">{{ index + 1 }}</th>
+                                <td>{{ item.text }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
     <script src="main.js"></script>
