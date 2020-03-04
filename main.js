@@ -3,7 +3,9 @@ var app = new Vue({
     data: {
         message: 'Hello World!',
         button: 'Nascondi',
-        isVisible: true
+        button_color: 'Cambia Colore',
+        isVisible: true,
+        isDark: true,
     },
     methods: {
         toggleTitle() {
@@ -14,6 +16,9 @@ var app = new Vue({
                 this.isVisible = true;
                 this.button = 'Nascondi'
             }
+        },
+        toggleColor() {
+            this.isDark = !this.isDark;
         }
     }
 })

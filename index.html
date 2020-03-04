@@ -12,8 +12,15 @@
 <body>
     <div id="app">
         <div class="container text-center mt-5">
-            <h1 v-if="isVisible" class="float-right">{{ message }}</h1>
-            <a href="#" @click="toggleTitle" class="float-left btn btn-danger">{{ button }}</a>
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1 v-if="isVisible" :class="isDark ? null : 'text-success'">{{ message }}</h1>
+                </div>
+                <div class="col-sm-6">
+                    <a href="#" @click="toggleTitle" class="btn btn-danger mt-2">{{ button }}</a>
+                    <a href="#" @click="toggleColor" class="btn btn-success mt-2">{{ button_color }}</a>
+                </div>
+            </div>
         </div>
     </div>
     <script src="main.js"></script>
