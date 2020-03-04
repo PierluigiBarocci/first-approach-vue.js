@@ -6,6 +6,7 @@ var app = new Vue({
         button_color: 'Cambia Colore',
         isVisible: true,
         isDark: true,
+        hover_message: 'Vue.js è magnifico!'
     },
     methods: {
         toggleTitle() {
